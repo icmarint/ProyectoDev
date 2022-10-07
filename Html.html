@@ -1,0 +1,45 @@
+<html>
+<h1>Primera clase de HTML</h1>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius inventore, delectus vero sunt illum fuga consequatur perspiciatis porro sequi quod iure sapiente cupiditate, a veniam doloribus illo voluptates quam dolorum!</p>
+<ul>
+    <li>primero</li>
+    <li> SEGUNDO</li>
+    <li> TERCERO</li>
+</ul>
+<ol>
+    <li>primero</li>
+    <li> SEGUNDO</li>
+    <li> TERCERO</li>
+</ol>
+<input type="text" name="" id="entrada">
+<button id="button">button</button>
+
+<ul id="listado">
+    <li></li>
+</ul>
+
+<script>
+    const entrada = document.getElementById('entrada')
+    const button = document.getElementById('button')
+    const listado = document.getElementById('listado')
+    const elementos = document.getElementById('elementos')
+
+    let salpicon = ['mango', 'piña']
+
+    button.addEventListener('click', function(){
+        salpicon.push(entrada.value)
+        entrada.value = ''
+        crearItems()
+    })
+
+    function crearItems(){
+        const listItems = salpicon.map(function (fruta) {
+            return '<li>' + fruta + '</li>'
+        })
+        listado.innerHTML = listItems.join('')
+    }
+
+    crearItems()
+
+</script>
+</html>
